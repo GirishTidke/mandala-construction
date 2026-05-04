@@ -508,6 +508,21 @@
     transition: all 0.25s;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(6,50,49,0.75) 0%, rgba(3,34,33,0.85) 100%);
+    z-index: 0;
+  }
+
+  .service-card > * {
+    position: relative;
+    z-index: 1;
   }
 
   .service-card::before {
@@ -519,12 +534,16 @@
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s;
+    z-index: 2;
   }
 
   .service-card:hover {
-    background: rgba(255,255,255,0.08);
     border-color: rgba(255,255,255,0.2);
     transform: translateY(-4px);
+  }
+
+  .service-card:hover::after {
+    background: linear-gradient(to bottom, rgba(6,50,49,0.70) 0%, rgba(3,34,33,0.80) 100%);
   }
 
   .service-card:hover::before { transform: scaleX(1); }
@@ -1290,7 +1309,7 @@
     <p>From foundations to finishing — every project handled with care, precision, and local expertise.</p>
   </div>
   <div class="services-grid">
-    <div class="service-card">
+    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
       </div>
@@ -1298,7 +1317,7 @@
       <p>Custom-built homes designed with care, quality, and Nagpur's unique character in mind.</p>
       <a href="#" class="service-link">Enquire Now →</a>
     </div>
-    <div class="service-card">
+    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80');">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M17 11h-4V7h-2v4H7v2h4v4h2v-4h4zm2-9H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
       </div>
@@ -1306,7 +1325,7 @@
       <p>Smart, scalable commercial spaces that support growth and reflect your business values.</p>
       <a href="#" class="service-link">Enquire Now →</a>
     </div>
-    <div class="service-card">
+    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&q=80');">
       <div class="service-icon">
         <svg viewBox="0 0 24 24"><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
       </div>
