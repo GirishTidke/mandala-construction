@@ -1,0 +1,75 @@
+﻿/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-step::after { display: none; }
+}
+@media (max-width: 960px) {
+  .about-grid, .contact-layout, .stats-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-badge { bottom: -16px; right: -16px; width: 160px; height: 130px; }
+  .about-badge .big { font-size: 36px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .service-detail-grid { grid-template-columns: 1fr; }
+  .footer-cta { grid-template-columns: 1fr; gap: 28px; }
+  .footer-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .projects-all-grid { grid-template-columns: repeat(2, 1fr); }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-header { flex-direction: column; align-items: flex-start; }
+  .services-header p { text-align: left; }
+  .projects-header { flex-direction: column; align-items: flex-start; }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-inner { padding: 0 20px; height: 68px; }
+  .nav-links { display: none; }
+  .mobile-toggle { display: flex; }
+  .section { padding: 56px 20px; }
+  .section-sm { padding: 40px 20px; }
+  .section-full { padding: 56px 0; }
+  .hero-title { font-size: 44px !important; letter-spacing: -2px; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-btns .btn { width: 100%; max-width: 320px; justify-content: center; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .trust-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .trust-item:last-child { border-bottom: none; }
+  .trust-strip { }
+  .services-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .services-header { padding: 0 20px; }
+  .projects-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .projects-header { padding: 0 20px; }
+  .projects-all-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .testimonials-header { padding: 0 20px; }
+  .stats-section { padding: 56px 20px; }
+  .stats-numbers { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .logos-strip { gap: 28px; padding: 36px 20px; }
+  footer { padding: 56px 20px 28px; }
+  .footer-cta { padding: 36px 24px; }
+  .footer-cta h3 { font-size: 24px; }
+  .footer-cols { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .check-list { grid-template-columns: 1fr; }
+  .cta-banner { padding: 60px 20px; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .page-hero { padding: 120px 20px 60px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .service-detail-grid { grid-template-columns: 1fr; }
+  .contact-form-box { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 36px !important; }
+  .logo-name { font-size: 17px; }
+  .logo-icon { width: 44px; height: 44px; }
+  .stats-numbers { grid-template-columns: 1fr; }
+  .stat-num { font-size: 40px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .modal-box { padding: 28px 20px; }
+}
+
