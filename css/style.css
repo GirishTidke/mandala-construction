@@ -1,4 +1,4 @@
-﻿/* ===== CSS VARIABLES ===== */
+/* ===== CSS VARIABLES ===== */
 :root {
   --primary: #063231;
   --primary-light: #0a4a49;
@@ -82,37 +82,55 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mandala-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
   transition: opacity 0.2s;
+  text-decoration: none;
 }
 .mandala-logo:hover { opacity: 0.9; }
 .logo-icon {
-  width: 52px; height: 52px;
-  background: white;
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   transition: transform 0.2s;
-  box-shadow: 0 8px 24px rgba(8,18,18,0.16);
+  box-shadow: none;
 }
-.mandala-logo:hover .logo-icon { transform: rotate(-5deg); }
+.mandala-logo:hover .logo-icon { transform: rotate(-10deg); }
 .logo-icon svg { width: 36px; height: 36px; }
-.logo-text-block { display: flex; flex-direction: column; line-height: 1; }
+.logo-icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.logo-text-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  line-height: 1;
+}
 .logo-name {
   font-family: 'Sora', sans-serif;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 19px;
   color: #fff;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
 }
 .logo-tagline {
-  font-size: 9px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.55);
+  font-size: 10px;
+  font-weight: 500;
+  color: #8ed300;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-top: 3px;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  padding-left: 8px;
 }
 .nav-links {
   display: flex;
@@ -708,7 +726,7 @@ footer { background: #020c0c; padding: 80px 48px 36px; }
 .svc-feature svg { fill: none; stroke: var(--accent); stroke-width: 2.5; width: 16px; height: 16px; flex-shrink: 0; }
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .process-step { text-align: center; padding: 32px 20px; background: white; border-radius: 16px; border: 1px solid var(--border); position: relative; }
-.process-step::after { content: 'â†’'; position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: var(--border); font-size: 24px; font-weight: 300; }
+.process-step::after { content: '→'; position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: var(--border); font-size: 24px; font-weight: 300; }
 .process-step:last-child::after { display: none; }
 .step-num { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 48px; color: var(--off-white); margin-bottom: 12px; }
 .process-step h4 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: var(--primary); margin-bottom: 8px; }
@@ -873,196 +891,83 @@ footer { background: #020c0c; padding: 80px 48px 36px; }
   object-fit: contain;
 }
 .footer-brand .mandala-logo {
-  cursor: default;
-  margin-bottom: 0;
-}
-.button-row {
-  margin-top: 32px;
   display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
 }
-.section-cta-center {
-  text-align: center;
-  margin-top: 48px;
+.mandala-logo:hover { opacity: 0.9; }
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+  box-shadow: none;
 }
-.section-copy-compact {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 20px;
-  max-width: 300px;
+.mandala-logo:hover .logo-icon { transform: rotate(-10deg); }
+.logo-icon svg { width: 36px; height: 36px; }
+.logo-icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
-.section-body-spaced {
-  margin-bottom: 20px;
+.logo-text-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  line-height: 1;
 }
-.section-white {
-  background: white;
-  padding: 80px 0;
+.logo-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  color: #fff;
+  letter-spacing: -0.3px;
 }
-.section-shell-tight {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.section-shell-narrow {
-  max-width: 800px;
-}
-.section-heading-center {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.section-heading-center-wide {
-  text-align: center;
-  margin-bottom: 56px;
-}
-.section-heading-center-compact {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.about-img-main--home {
-  height: 400px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-.about-img-main--about {
-  height: 420px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-.value-icon--primary {
-  background: rgba(6, 50, 49, 0.08);
-}
-.value-icon--accent {
-  background: var(--accent-soft);
-}
-.value-icon--lime {
-  background: rgba(203, 255, 84, 0.25);
-}
-.team-photo--sunita {
-  background: linear-gradient(135deg, #4a2a10, #7a4a20);
-}
-.team-photo--rohit {
-  background: linear-gradient(135deg, #1a1a3a, #2a2a5a);
-}
-.team-photo--neha {
-  background: linear-gradient(135deg, #1a2a1a, #2a4a2a);
-}
-.testi-avatar--primary {
-  background: var(--primary);
-}
-.testi-avatar--accent {
-  background: var(--accent);
-}
-.testi-avatar--light {
-  background: var(--primary-light);
-}
-.svc-card--residential {
-  background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');
-}
-.svc-card--commercial {
-  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80');
-}
-.svc-card--renovation {
-  background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&q=80');
-}
-.svc-img--residential {
-  background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');
-}
-.svc-img--commercial {
-  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80');
-}
-.svc-img--renovation {
-  background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&q=80');
-}
-.svc-img--interior {
-  background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80');
-}
-.proj-card--villa {
-  background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80');
-}
-.proj-card--office {
-  background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80');
-}
-.proj-card--reno {
-  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80');
-}
-.proj-card--itpark {
-  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80');
-}
-.proj-all-img--villa {
-  background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80');
-}
-.proj-all-img--tower {
-  background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80');
-}
-.proj-all-img--bungalow {
-  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80');
-}
-.proj-all-img--midc {
-  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80');
-}
-.proj-all-img--family {
-  background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80');
-}
-.proj-all-img--penthouse {
-  background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80');
-}
-.proj-all-img--retail {
-  background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80');
-}
-.proj-all-img--restaurant {
-  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80');
-}
-.proj-all-img--apartment {
-  background-image: url('https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=600&q=80');
-}
-.project-chip {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  color: white;
+.logo-tagline {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 500;
+  color: #8ed300;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-.project-chip--residential {
-  background: var(--accent);
-}
-.project-chip--commercial {
-  background: var(--primary);
-}
-.project-chip--renovation {
-  background: #7c3aed;
-}
-.project-chip--interior {
-  background: #0891b2;
-}
-.blog-img--construction {
-  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80');
-}
-.blog-img--interior {
-  background-image: url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80');
-}
-.blog-img--renovation {
-  background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&q=80');
-}
-.blog-img--vastu {
-  background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');
-}
-.blog-img--materials {
-  background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80');
-}
-.blog-img--commercial {
-  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80');
-}
-.process-step .step-num {
-  color: var(--lime);
-}
-.faq-q {
-  width: 100%;
-  text-align: left;
+  border-left: 1px solid rgba(255,255,255,0.25);
+  padding-left: 8px;
 }
 
+
+/* ===== PROJECT CARD IMAGES ===== */
+.proj-all-img--villa { background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80'); }
+.proj-all-img--tower { background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80'); }
+.proj-all-img--bungalow { background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80'); }
+.proj-all-img--midc { background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'); }
+.proj-all-img--family { background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80'); }
+.proj-all-img--penthouse { background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80'); }
+.proj-all-img--retail { background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=600&q=80'); }
+.proj-all-img--restaurant { background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80'); }
+.proj-all-img--apartment { background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80'); }
+
+/* ===== BLOG CARD IMAGES ===== */
+.blog-img { height: 200px; background-size: cover; background-position: center; border-radius: 12px 12px 0 0; }
+.blog-img--construction { background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80'); }
+.blog-img--interior { background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80'); }
+.blog-img--renovation { background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'); }
+.blog-img--vastu { background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'); }
+.blog-img--materials { background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80'); }
+.blog-img--commercial { background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80'); }
+
+/* ===== SERVICE CARD IMAGES ===== */
+.svc-img { height: 220px; background-size: cover; background-position: center; position: relative; }
+.svc-img--residential { background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80'); }
+.svc-img--commercial { background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'); }
+.svc-img--renovation { background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'); }
+.svc-img--interior { background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80'); }
