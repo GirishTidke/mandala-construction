@@ -25,8 +25,8 @@
 }
 @media (max-width: 768px) {
   .nav-inner { padding: 0 20px; height: 68px; }
-  .nav-links { display: none; }
-  .mobile-toggle { display: flex; }
+  .nav-links { display: none !important; }
+  .mobile-toggle { display: flex !important; z-index: 601; position: relative; }
   .section { padding: 56px 20px; }
   .section-sm { padding: 40px 20px; }
   .section-full { padding: 56px 0; }

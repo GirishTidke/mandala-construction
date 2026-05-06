@@ -9,10 +9,125 @@
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/responsive.css">
 <title>Contact - The Mandala Design and Construction</title>
-<script defer src="./js/utils.js"></script>
-<script defer src="./js/main.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/main.js"></script>
+
+<style>
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    position: fixed;
+    inset: 0;
+    background: #063231;
+    z-index: 600;
+    padding: 100px 24px 40px;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+  .mobile-nav.open {
+    transform: translateX(0);
+  }
+  .mobile-nav-link, .mobile-nav-cta {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-nav-link:hover {
+    background: rgba(255,255,255,0.08);
+  }
+  .mobile-nav-link.active {
+    color: #8ed300;
+    background: rgba(142,211,0,0.1);
+  }
+  .mobile-nav-cta {
+    margin-top: 16px;
+    background: #8ed300;
+    color: #063231 !important;
+    font-weight: 700;
+  }
+  .mobile-nav-cta:hover {
+    background: #a0e800;
+  }
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 601;
+    position: relative;
+  }
+  .mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+  .mobile-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  @media (max-width: 768px) {
+    .mobile-toggle {
+      display: flex !important;
+    }
+    .nav-links {
+      display: none !important;
+    }
+  }
+</style>
 </head>
 <body data-page="contact">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileNav');
+  
+  if (toggle && menu) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggle.classList.toggle('open');
+      menu.classList.toggle('open');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    });
+    
+    document.querySelectorAll('[data-close-mobile]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        toggle.classList.remove('open');
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+});
+</script>
 <nav id="navbar">
   <div class="nav-inner">
     <a class="mandala-logo" href="./index.html" aria-label="The Mandala home">
@@ -228,10 +343,10 @@
         </a>
         <p class="footer-desc">At Mandala, we are dedicated to delivering exceptional construction services that stand the test of time - built for Nagpur, built to last.</p>
         <div class="footer-socials">
-          <button class="social-btn" type="button" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></button>
-          <button class="social-btn" type="button" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="rgba(255,255,255,0.55)"/></svg></button>
+          <a class="social-btn" href="https://facebook.com/mandaladc" title="Facebook" aria-label="Visit us on Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a class="social-btn" href="https://instagram.com/mandaladc" title="Instagram" aria-label="Visit us on Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="rgba(255,255,255,0.55)"/></svg></a>
           <a class="social-btn" href="https://wa.me/918055223358?text=Hello%20The%20Mandala%2C%20I%20would%20like%20to%20know%20more%20about%20your%20construction%20services." title="WhatsApp" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 2C6.47 2 2 6.48 2 12c0 1.72.45 3.33 1.24 4.73L2.08 21.9l5.25-1.37C8.8 21.47 10.36 22 12 22c5.52 0 10-4.48 10-10S17.52 2 11.99 2zm.01 18c-1.51 0-2.97-.41-4.22-1.12l-.3-.18-3.12.82.83-3.04-.2-.31A8 8 0 0112 4c4.41 0 8 3.59 8 8s-3.59 8-8 8z"/></svg></a>
-          <button class="social-btn" type="button" title="YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#020c0c"/></svg></button>
+          <a class="social-btn" href="https://youtube.com/@mandaladc" title="YouTube" aria-label="Visit us on YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#020c0c"/></svg></a>
         </div>
       </div>
 

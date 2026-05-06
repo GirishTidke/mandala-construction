@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Menu Test</title>
+<style>
+body { margin: 0; font-family: sans-serif; }
+.nav { position: fixed; top: 0; left: 0; right: 0; background: #063231; padding: 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+.logo { color: white; font-weight: bold; }
+.hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { position: fixed; inset: 0; background: #063231; z-index: 99; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: white; font-size: 24px; text-decoration: none; }
+.content { padding: 100px 20px; }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="logo">The Mandala</div>
+   <button class="hamburger mobile-toggle" id="mobileToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" class="menu-link">Home</a>
+  <a href="#" class="menu-link">About</a>
+  <a href="#" class="menu-link">Services</a>
+  <a href="#" class="menu-link">Projects</a>
+  <a href="#" class="menu-link">Contact</a>
+</div>
+
+<div class="content">
+  <h1>Mobile Menu Test</h1>
+  <p>Click the hamburger menu (3 lines) in the top right to test.</p>
+  <p>Resize your browser to mobile width or open on mobile device.</p>
+</div>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+hamburger.addEventListener('click', function() {
+  console.log('Hamburger clicked!');
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    console.log('Menu link clicked!');
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+</script>
+</body>
+</html>

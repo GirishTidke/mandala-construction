@@ -172,7 +172,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Mobile menu */
 .mobile-nav {
-  display: none;
   position: fixed;
   inset: 0;
   background: var(--primary);
@@ -181,8 +180,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: center;
   gap: 8px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.mobile-nav.open { display: flex; }
+.mobile-nav.open { 
+  display: flex !important; 
+  opacity: 1;
+}
 .mobile-nav-link {
   font-family: 'Sora', sans-serif;
   font-size: 28px;
