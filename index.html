@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/responsive.css">
 <title>The Mandala Design and Construction - Nagpur</title>
 <script src="./js/utils.js"></script>
+<script src="./js/components.js"></script>
 <script src="./js/main.js"></script>
 
 <!-- ? MOBILE NAV FIX: Add this to your responsive.css instead if preferred -->
@@ -123,127 +124,10 @@
 </style>
 </head>
 <body data-page="home">
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggle = document.getElementById('mobileToggle');
-  const menu = document.getElementById('mobileNav');
-  
-  if (toggle && menu) {
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      toggle.classList.toggle('open');
-      menu.classList.toggle('open');
-      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-    });
-    
-    document.querySelectorAll('[data-close-mobile]').forEach(function(link) {
-      link.addEventListener('click', function() {
-        toggle.classList.remove('open');
-        menu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-});
-</script>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a class="mandala-logo" href="./index.html" aria-label="The Mandala home">
-      <div class="logo-icon">
-        <img src="./images/npLogo.png" alt="The Mandala logo">
-      </div>
-      <div class="logo-text-block">
-        <span class="logo-name">The Mandala</span>
-        <span class="logo-tagline">Design &amp; Construction</span>
-      </div>
-    </a>
 
-    <div class="nav-links">
-      <a class="nav-link" data-nav="home" href="./index.html">Home</a>
-      <a class="nav-link" data-nav="about" href="./about.html">About</a>
-      <a class="nav-link" data-nav="services" href="./index.html#services">Services</a>
-      <a class="nav-link" data-nav="projects" href="./index.html#projects">Projects</a>
-      <a class="nav-link" data-nav="blog" href="./index.html#blog">Blog</a>
-      <a class="nav-link" data-nav="contact" href="./contact.html">Contact</a>
-      <a class="nav-cta" href="./contact.html#contact-form">Get in Touch</a>
-    </div>
+<!-- Header Component Placeholder -->
+<div id="component-header"></div>
 
-    <button class="mobile-toggle" id="mobileToggle" type="button" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<div class="mobile-nav" id="mobileNav">
-  <a class="mobile-nav-link" data-nav="home" data-close-mobile href="./index.html">Home</a>
-  <a class="mobile-nav-link" data-nav="about" data-close-mobile href="./about.html">About</a>
-  <a class="mobile-nav-link" data-nav="services" data-close-mobile href="./index.html#services">Services</a>
-  <a class="mobile-nav-link" data-nav="projects" data-close-mobile href="./index.html#projects">Projects</a>
-  <a class="mobile-nav-link" data-nav="blog" data-close-mobile href="./index.html#blog">Blog</a>
-  <a class="mobile-nav-link" data-nav="contact" data-close-mobile href="./contact.html">Contact</a>
-  <a class="mobile-nav-cta" data-close-mobile href="./contact.html#contact-form">Enquire Now</a>
-</div>
-
-<div class="modal-overlay" id="enquiryModal">
-  <div class="modal-box">
-    <button class="modal-close" type="button" data-close-enquiry aria-label="Close enquiry form">
-      <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
-    </button>
-    <h3>Let's Talk About Your Project</h3>
-    <p class="modal-sub">Fill in the contact form and our team will get back to you within 24 hours.</p>
-    <form id="enquiryForm">
-      <div class="form-grid-2">
-        <div class="form-group">
-          <label>First Name <span class="form-required">*</span></label>
-          <input type="text" name="fname" placeholder="Rahul" required>
-        </div>
-        <div class="form-group">
-          <label>Last Name</label>
-          <input type="text" name="lname" placeholder="Sharma">
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Phone Number <span class="form-required">*</span></label>
-        <input type="tel" name="phone" placeholder="+91 98765 43210" required>
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="email" placeholder="you@email.com">
-      </div>
-      <div class="form-group">
-        <label>Service Required <span class="form-required">*</span></label>
-        <select name="service" required>
-          <option value="">Select a service...</option>
-          <option>Residential Construction</option>
-          <option>Commercial Buildings</option>
-          <option>Renovation &amp; Remodeling</option>
-          <option>Interior Design</option>
-          <option>Structural Consultation</option>
-          <option>Other / General Enquiry</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Project Budget (approx.)</label>
-        <select name="budget">
-          <option value="">Select a range...</option>
-          <option>Under &#8377;25 Lakh</option>
-          <option>&#8377;25L - &#8377;50L</option>
-          <option>&#8377;50L - &#8377;1 Crore</option>
-          <option>&#8377;1 Crore - &#8377;5 Crore</option>
-          <option>Above &#8377;5 Crore</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Your Message <span class="form-required">*</span></label>
-        <textarea name="message" placeholder="Tell us about your project, location, timeline..." required></textarea>
-      </div>
-      <button type="submit" class="submit-btn" id="enquirySubmitBtn">Send Message -&gt;</button>
-    </form>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
 <main>
   <section class="hero">
     <div class="hero-bg"></div>
@@ -286,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <section class="section" id="home-about">
     <div class="about-grid">
       <div class="about-imgs">
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&amp;q=80" alt="Construction site in Nagpur" class="about-img-main about-img-main--home">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Construction site in Nagpur" class="about-img-main about-img-main--home">
         <div class="about-badge">
           <span class="big">25+</span>
           <span class="small">Years of Trust</span>
@@ -298,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <p class="section-body">At Mandala Design and Construction, we're proud to serve Nagpur with reliable, high-quality construction services. From custom homes to commercial builds, our local expertise ensures every project is done right - with integrity, craftsmanship, and a commitment to your vision.</p>
         <div class="check-list">
           <div class="check-item"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l2.5 2.5L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>150+ Projects Completed</div>
-          <div class="check-item"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l2.5 2.5L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Licensed &amp; ISO Certified</div>
+          <div class="check-item"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l2.5 2.5L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Licensed & ISO Certified</div>
           <div class="check-item"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l2.5 2.5L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Experienced Team</div>
           <div class="check-item"><div class="check-icon"><svg viewBox="0 0 12 12"><path d="M2 6l2.5 2.5L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Client-First Approach</div>
         </div>
@@ -347,10 +231,10 @@ document.addEventListener('DOMContentLoaded', function() {
       <article class="svc-detail-card">
         <div class="svc-img svc-img--renovation"><div class="svc-img-overlay"><span class="svc-img-tag">Renovation</span></div></div>
         <div class="svc-detail-body">
-          <h3>Renovation &amp; Remodeling</h3>
+          <h3>Renovation & Remodeling</h3>
           <p>Transform your existing space without the hassle of a full rebuild. We handle everything from kitchens to complete home makeovers.</p>
           <div class="svc-features">
-            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Kitchen &amp; bathroom upgrades</div>
+            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Kitchen & bathroom upgrades</div>
             <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Structural modifications</div>
             <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Minimal disruption approach</div>
             <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Fixed-price contracts</div>
@@ -361,13 +245,13 @@ document.addEventListener('DOMContentLoaded', function() {
       <article class="svc-detail-card">
         <div class="svc-img svc-img--interior"><div class="svc-img-overlay"><span class="svc-img-tag">Interior</span></div></div>
         <div class="svc-detail-body">
-          <h3>Interior Design &amp; Fit-Out</h3>
+          <h3>Interior Design & Fit-Out</h3>
           <p>Our in-house interior team creates beautiful, functional spaces that complement the structure and exceed your expectations.</p>
           <div class="svc-features">
             <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>3D visualization</div>
-            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Modular furniture &amp; cabinetry</div>
-            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Lighting &amp; electrical planning</div>
-            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Material &amp; finish selection</div>
+            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Modular furniture & cabinetry</div>
+            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Lighting & electrical planning</div>
+            <div class="svc-feature"><svg viewBox="0 0 16 16"><path d="M3 8l3 3 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>Material & finish selection</div>
           </div>
           <button class="btn btn-primary" type="button" data-open-enquiry>Get a Quote</button>
         </div>
@@ -431,12 +315,12 @@ document.addEventListener('DOMContentLoaded', function() {
   <section class="stats-section">
     <div class="stats-grid">
       <div class="stats-left">
-        <span class="section-label">Proven &amp; Trusted</span>
+        <span class="section-label">Proven & Trusted</span>
         <h2 class="section-title">Backed by Results,<br>Built on Relationships</h2>
         <p class="section-body">Mandala Design and Construction has become the name homeowners and businesses trust across Nagpur. Whether it's new construction or renovation, you're in good company.</p>
       </div>
       <div class="stats-numbers">
-        <div class="stat-item"><div class="stat-num">150+</div><div class="stat-div"></div><div class="stat-lbl">Projects Delivered</div><div class="stat-desc">Across Nagpur &amp; Maharashtra</div></div>
+        <div class="stat-item"><div class="stat-num">150+</div><div class="stat-div"></div><div class="stat-lbl">Projects Delivered</div><div class="stat-desc">Across Nagpur & Maharashtra</div></div>
         <div class="stat-item"><div class="stat-num">10 Yr</div><div class="stat-div"></div><div class="stat-lbl">Structural Warranty</div><div class="stat-desc">Peace of mind guaranteed</div></div>
         <div class="stat-item"><div class="stat-num">25+</div><div class="stat-div"></div><div class="stat-lbl">Years Experience</div><div class="stat-desc">Deep roots in Nagpur</div></div>
         <div class="stat-item"><div class="stat-num">4.9*</div><div class="stat-div"></div><div class="stat-lbl">Client Rating</div><div class="stat-desc">Consistently top-rated</div></div>
@@ -446,17 +330,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section class="section" id="blog">
     <div class="section-heading-center-wide">
-      <span class="section-label">Insights &amp; Tips</span>
+      <span class="section-label">Insights & Tips</span>
       <h2 class="section-title">The Mandala Blog</h2>
       <p class="section-body">Construction tips, design inspiration, and smarter building ideas from our team.</p>
     </div>
     <div class="blog-grid">
-      <article class="blog-card"><div class="blog-img blog-img--construction"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Construction Tips</span><span class="blog-date">Jan 15, 2025</span></div><h4>How to Choose the Right Construction Company in Nagpur</h4><p>Selecting the right builder is one of the most important decisions you'll make. Here's a practical guide...</p><span class="blog-read">Read More -&gt;</span></div></article>
-      <article class="blog-card"><div class="blog-img blog-img--interior"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Interior Design</span><span class="blog-date">Feb 3, 2025</span></div><h4>Top Interior Design Trends for Homes in 2025</h4><p>From biophilic design to smart homes - discover the interior trends transforming Nagpur homes...</p><span class="blog-read">Read More -&gt;</span></div></article>
-      <article class="blog-card"><div class="blog-img blog-img--renovation"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Renovation</span><span class="blog-date">Feb 18, 2025</span></div><h4>When to Renovate vs. When to Rebuild</h4><p>Not sure whether to renovate your existing home or start fresh? Our experts break down the decision...</p><span class="blog-read">Read More -&gt;</span></div></article>
-      <article class="blog-card"><div class="blog-img blog-img--vastu"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Vastu</span><span class="blog-date">Mar 5, 2025</span></div><h4>Vastu Shastra in Modern Construction</h4><p>Ancient wisdom meets modern architecture. Learn how we integrate Vastu principles into contemporary designs...</p><span class="blog-read">Read More -&gt;</span></div></article>
-      <article class="blog-card"><div class="blog-img blog-img--materials"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Materials</span><span class="blog-date">Mar 20, 2025</span></div><h4>Best Construction Materials for Nagpur's Climate</h4><p>Nagpur's summers and monsoons demand specific material choices. Here is what our engineers recommend...</p><span class="blog-read">Read More -&gt;</span></div></article>
-      <article class="blog-card"><div class="blog-img blog-img--commercial"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Commercial</span><span class="blog-date">Apr 8, 2025</span></div><h4>5 Things to Consider Before Starting a Commercial Build</h4><p>Commercial construction involves unique challenges. Before you break ground, make sure you've considered these factors...</p><span class="blog-read">Read More -&gt;</span></div></article>
+      <article class="blog-card"><div class="blog-img blog-img--construction"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Construction Tips</span><span class="blog-date">Jan 15, 2025</span></div><h4>How to Choose the Right Construction Company in Nagpur</h4><p>Selecting the right builder is one of the most important decisions you'll make. Here's a practical guide...</p><span class="blog-read">Read More -></span></div></article>
+      <article class="blog-card"><div class="blog-img blog-img--interior"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Interior Design</span><span class="blog-date">Feb 3, 2025</span></div><h4>Top Interior Design Trends for Homes in 2025</h4><p>From biophilic design to smart homes - discover the interior trends transforming Nagpur homes...</p><span class="blog-read">Read More -></span></div></article>
+      <article class="blog-card"><div class="blog-img blog-img--renovation"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Renovation</span><span class="blog-date">Feb 18, 2025</span></div><h4>When to Renovate vs. When to Rebuild</h4><p>Not sure whether to renovate your existing home or start fresh? Our experts break down the decision...</p><span class="blog-read">Read More -></span></div></article>
+      <article class="blog-card"><div class="blog-img blog-img--vastu"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Vastu</span><span class="blog-date">Mar 5, 2025</span></div><h4>Vastu Shastra in Modern Construction</h4><p>Ancient wisdom meets modern architecture. Learn how we integrate Vastu principles into contemporary designs...</p><span class="blog-read">Read More -></span></div></article>
+      <article class="blog-card"><div class="blog-img blog-img--materials"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Materials</span><span class="blog-date">Mar 20, 2025</span></div><h4>Best Construction Materials for Nagpur's Climate</h4><p>Nagpur's summers and monsoons demand specific material choices. Here is what our engineers recommend...</p><span class="blog-read">Read More -></span></div></article>
+      <article class="blog-card"><div class="blog-img blog-img--commercial"></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Commercial</span><span class="blog-date">Apr 8, 2025</span></div><h4>5 Things to Consider Before Starting a Commercial Build</h4><p>Commercial construction involves unique challenges. Before you break ground, make sure you've considered these factors...</p><span class="blog-read">Read More -></span></div></article>
     </div>
   </section>
 
@@ -468,78 +352,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <span class="logo-partner">JSW Steel</span>
   </div>
 </main>
-<footer>
-  <div class="footer-wrap">
-    <div class="footer-cta">
-      <div>
-        <h3>Ready to Start Your Project?</h3>
-        <p>Your home should be more than a place to live - it should reflect your lifestyle, your values, and your dreams.</p>
-      </div>
-      <div class="footer-cta-right">
-        <p>From idea to reality, let's begin. Contact the Mandala team today to get your project started.</p>
-        <a class="btn btn-primary" href="./contact.html#contact-form">Let's Talk -&gt;</a>
-      </div>
-    </div>
 
-    <div class="footer-cols">
-      <div class="footer-brand">
-        <a class="mandala-logo" href="./index.html" aria-label="The Mandala home">
-          <div class="logo-icon">
-            <img src="./images/npLogo.png" alt="The Mandala logo">
-          </div>
-          <div class="logo-text-block">
-            <span class="logo-name">The Mandala</span>
-            <span class="logo-tagline">Design &amp; Construction</span>
-          </div>
-        </a>
-        <p class="footer-desc">At Mandala, we are dedicated to delivering exceptional construction services that stand the test of time - built for Nagpur, built to last.</p>
-        <div class="footer-socials">
-          <a class="social-btn" href="https://facebook.com/mandaladc" title="Facebook" aria-label="Visit us on Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a class="social-btn" href="https://instagram.com/mandaladc" title="Instagram" aria-label="Visit us on Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="rgba(255,255,255,0.55)"/></svg></a>
-          <a class="social-btn" href="https://wa.me/918055223358?text=Hello%20The%20Mandala%2C%20I%20would%20like%20to%20know%20more%20about%20your%20construction%20services." title="WhatsApp" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 2C6.47 2 2 6.48 2 12c0 1.72.45 3.33 1.24 4.73L2.08 21.9l5.25-1.37C8.8 21.47 10.36 22 12 22c5.52 0 10-4.48 10-10S17.52 2 11.99 2zm.01 18c-1.51 0-2.97-.41-4.22-1.12l-.3-.18-3.12.82.83-3.04-.2-.31A8 8 0 0112 4c4.41 0 8 3.59 8 8s-3.59 8-8 8z"/></svg></a>
-          <a class="social-btn" href="https://youtube.com/@mandaladc" title="YouTube" aria-label="Visit us on YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.55)"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#020c0c"/></svg></a>
-        </div>
-      </div>
+<!-- Footer Component Placeholder -->
+<div id="component-footer"></div>
 
-      <div class="footer-col">
-        <h6>Company</h6>
-        <ul>
-          <li><a class="footer-nav-link" href="./index.html">Home</a></li>
-          <li><a class="footer-nav-link" href="/about">About Us</a></li>
-          <li><a class="footer-nav-link" href="./index.html#services">Services</a></li>
-          <li><a class="footer-nav-link" href="./index.html#projects">Projects</a></li>
-          <li><a class="footer-nav-link" href="./contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h6>Services</h6>
-        <ul>
-          <li><a class="footer-nav-link" href="./index.html#services">Residential</a></li>
-          <li><a class="footer-nav-link" href="./index.html#services">Commercial</a></li>
-          <li><a class="footer-nav-link" href="./index.html#services">Renovation</a></li>
-          <li><a class="footer-nav-link" href="./index.html#services">Interior Design</a></li>
-          <li><a class="footer-nav-link" href="./index.html#blog">Blog</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h6>Contact Us</h6>
-        <div class="footer-contact-row"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><span>+91 80552 23358</span></div>
-        <div class="footer-contact-row"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>info@mandaladc.com</span></div>
-        <div class="footer-contact-row"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span> Nagpur, Maharashtra - 440035</span></div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Mandala Design and Construction. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Sitemap</a>
-      </div>
-    </div>
-  </div>
-</footer>
 </body>
 </html>
