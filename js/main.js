@@ -22,7 +22,7 @@ const setActiveNav = utils.setActiveNav || ((key) => {
 });
 
 // ─── Telegram Config ────────────────────────────────────────────────────────
-const TELEGRAM_BOT_ID = '8704884272:AAEnUKOWIJjxOnh5QDW3xc7SlVXCI9056Nk';
+const TELEGRAM_BOT_ID = '8704884272:AAGagkO7hq-_qJRF6yn0BZX-7gTiZMx8XJA';
 const TELEGRAM_CHAT_ID = 5211441236;
 
 function sendToTelegram(text) {
